@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #667eea;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.photo:hover {
+    transform: scale(1.05);
+    border-color: #764ba2;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+.profile-info h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.profession {
+    font-size: 1.3em;
+    color: #667eea;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.location {
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* Main Content */
+.main-content {
+    display: grid;
+    gap: 30px;
+}
+
+.about, .contacts {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about h2, .contacts h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.about h2::after, .contacts h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.info-card, .skills-card {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 4px solid #667eea;
+}
+
+.info-card h3, .skills-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.info-card ul, .skills-card ul {
+    list-style: none;
+}
+
+.info-card li, .skills-card li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.info-card li:last-child, .skills-card li:last-child {
+    border-bottom: none;
+}
+
+.info-card strong {
+    color: #667eea;
+}
+
+/* Contacts */
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.contact-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+    color: white;
+}
+
+.contact-link::after {
+    display: none;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.easter-egg {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+    margin-bottom: 15px;
+}
+
+.easter-egg:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-link {
+        width: 200px;
+        justify-content: center;
+    }
+    
+    .profile-info h1 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .header, .about, .contacts {
+        padding: 25px;
+    }
+    
+    .photo {
+        width: 150px;
+        height: 150px;
+    }
+}
